@@ -1,4 +1,4 @@
-(ns pinkgorilla.core
+(ns pinkgorilla.web
   (:require
    [clj-time.core :as t]
    [luminus.http-server :as http]
@@ -11,7 +11,7 @@
    [compojure.route :as route]
 
    [pinkgorilla.middleware :as middleware])
-  (:gen-class))
+ )
 
 
 (defroutes handler
@@ -25,22 +25,15 @@
   (middleware/wrap-middleware handler))
 
 
-(defn run-app []
+(defn run-web []
   (println "starting shadowdeps server at port 2705..")
   (http/start
    {:handler app
     :port 2705}))
 
 
-
-(defn -main []
-  (run-app))
-
-
-
-
 (comment
 
-  (run-app)
+  (run-web)
   
   )

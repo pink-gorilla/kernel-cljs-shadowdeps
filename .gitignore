@@ -25,3 +25,7 @@ out/public/js/manifest.json
 package-lock.json
 .shadow-cljs/
 out/
+
+package.json
+shadow-cljs.edn
+yarn-error.log

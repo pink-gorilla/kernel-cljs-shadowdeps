@@ -41,4 +41,4 @@
   :test-paths ["test"]
   :resource-paths ["resources"]
   :target-path "target/%s/"
-  :main ^:skip-aot pinkgorilla.core)
+  :main ^:skip-aot pinkgorilla.main)
