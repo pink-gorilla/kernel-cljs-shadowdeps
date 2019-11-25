@@ -14,7 +14,7 @@
    [ring/ring-defaults "0.3.2"]
    [ring/ring-codec "1.1.1"]
    [ring-cors "0.1.12"]                       ; CORS requests
-
+   
    [ch.qos.logback/logback-classic "1.2.3"]
    [cheshire "5.8.1"]
    [clojure.java-time "0.3.2"]
@@ -29,7 +29,12 @@
    [metosin/ring-http-response "0.9.1"]
 
    [org.clojure/tools.cli "0.4.2"]
-   [ring/ring-core "1.7.1"]]
+   [ring/ring-core "1.7.1"]
+   
+   ; shadow-cljs is not needed here (we generate shadow deps via yarn)
+   ;[thheller/shadow-cljs "2.0.40"]
+   
+   ]
 
   :min-lein-version "2.8.0"
   :source-paths ["src"]

@@ -13,3 +13,15 @@ pom.xml.asc
 .nrepl-port
 .cpcache/
 out/
+yarn.lock
+target
+.idea
+node_modules
+out/public/js/bootstrap
+out/public/js/cljs-runtime
+out/public/js/base.js**
+out/public/js/manifest.json
+*.iml
+package-lock.json
+.shadow-cljs/
+out/
