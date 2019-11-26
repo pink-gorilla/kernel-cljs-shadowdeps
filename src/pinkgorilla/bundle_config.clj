@@ -12,12 +12,18 @@
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
             ['awb99.fortune "0.0.1"]
             ]
-    :npm {"moment" "^2.24.0"}
+    :npm {"moment" "^2.24.0"
+          "p5" "^0.9.0"  ; p5 is a quil cljsjs dependency
+          }
     :ns ['fortune.core
          'pinkgorilla.ui.gorilla-renderable
          ;'pinkgorilla.ui - this brings up namespace not available error.
          'quil.sketch 
-         "moment"]}
+         'quil.middleware
+         'quil.core
+         "moment"
+         ;"p5"
+         ]}
    :mariacloud
    {:maven [['re-view "0.4.6"]
             ['lark/cells "0.1.5"]
