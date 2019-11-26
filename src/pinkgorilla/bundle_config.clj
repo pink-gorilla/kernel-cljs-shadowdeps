@@ -23,6 +23,8 @@
          'quil.core
          "moment"
          ;"p5"
+          'clojure.string
+          'clojure.pprint 
          ]}
    :mariacloud
    {:maven [['re-view "0.4.6"]
