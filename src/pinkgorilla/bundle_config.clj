@@ -33,4 +33,10 @@
          'cells.lib
          'shapes.core
          're-view.core
-         're-view.hiccup.core]}})
+         're-view.hiccup.core
+         'lark.value-viewer.core
+         're-db.d
+         're-db.patterns
+         ;'thi.ng.geom.svg.core
+         ]}})
+
