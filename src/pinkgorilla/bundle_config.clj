@@ -3,11 +3,11 @@
 
 (def bundle-config
   {:small
-   {:maven [['awb99.fortune "0.0.1"]]
+   {:maven [['awb99.fortune "0.0.2"]]
     :npm {"moment" "^2.24.0"}
     :ns ['fortune.core "moment"]}
    :gorilla
-   {:maven [['awb99.fortune "0.0.1"]
+   {:maven [['awb99.fortune "0.0.2"]
             ['org.pinkgorilla/gorilla-renderable "2.1.2"]
             ['quil "3.1.0"] ;drawing library
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
@@ -26,7 +26,7 @@
          'clojure.string
          'clojure.pprint]}
    :mariacloud
-   {:maven [['awb99.fortune "0.0.1"]
+   {:maven [['awb99.fortune "0.0.2"]
             ['re-view "0.4.6"]
             ['lark/cells "0.1.5"]
             ['lark/tools "0.1.19"]
