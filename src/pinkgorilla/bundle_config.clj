@@ -7,10 +7,10 @@
     :npm {"moment" "^2.24.0"}
     :ns ['fortune.core "moment"]}
    :gorilla
-   {:maven [['org.pinkgorilla/gorilla-renderable "2.1.2"] 
+   {:maven [['awb99.fortune "0.0.1"]
+            ['org.pinkgorilla/gorilla-renderable "2.1.2"]
             ['quil "3.1.0"] ;drawing library
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
-            ['awb99.fortune "0.0.1"]
             ]
     :npm {"moment" "^2.24.0"
           "p5" "^0.9.0"  ; p5 is a quil cljsjs dependency
@@ -18,16 +18,16 @@
     :ns ['fortune.core
          'pinkgorilla.ui.gorilla-renderable
          ;'pinkgorilla.ui - this brings up namespace not available error.
-         'quil.sketch 
+         'quil.sketch
          'quil.middleware
          'quil.core
          "moment"
          ;"p5"
-          'clojure.string
-          'clojure.pprint 
-         ]}
+         'clojure.string
+         'clojure.pprint]}
    :mariacloud
-   {:maven [['re-view "0.4.6"]
+   {:maven [['awb99.fortune "0.0.1"]
+            ['re-view "0.4.6"]
             ['lark/cells "0.1.5"]
             ['lark/tools "0.1.19"]
             ['maria/shapes "0.1.0"]
@@ -37,7 +37,8 @@
            "react" "^16.0.0"
            "react-dom" "^16.0.0"
            "shadow-cljs" "^2.0.41"}
-    :ns ['cells.cell
+    :ns ['fortune.core
+         'cells.cell
          'cells.lib
          'shapes.core
          're-view.core
@@ -45,6 +46,7 @@
          'lark.value-viewer.core
          're-db.d
          're-db.patterns
+
          ;'thi.ng.geom.svg.core
          ]}})
 
