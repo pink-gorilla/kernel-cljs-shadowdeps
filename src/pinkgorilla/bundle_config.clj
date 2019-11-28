@@ -8,14 +8,17 @@
     :ns ['fortune.core "moment"]}
    :gorilla
    {:maven [['awb99.fortune "0.0.2"]
+            ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
             ['org.pinkgorilla/gorilla-renderable "2.1.2"]
             ['quil "3.1.0"] ;drawing library
-            ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
             ]
     :npm {"moment" "^2.24.0"
-          "p5" "^0.9.0"  ; p5 is a quil cljsjs dependency
+          "p5" "^0.9.0"  ; p5 is a quil cljsjs dependency, v 0.10.x has an error and cannot be used
           }
-    :ns ['fortune.core
+    :ns ['clojure.string
+         'clojure.pprint
+         'fortune.core
+         'awb99.shapes.core
          'pinkgorilla.ui.gorilla-renderable
          ;'pinkgorilla.ui - this brings up namespace not available error.
          'quil.sketch
@@ -23,8 +26,7 @@
          'quil.core
          "moment"
          ;"p5"
-         'clojure.string
-         'clojure.pprint]}
+         ]}
    :mariacloud
    {:maven [['awb99.fortune "0.0.2"]
             ['re-view "0.4.6"]
