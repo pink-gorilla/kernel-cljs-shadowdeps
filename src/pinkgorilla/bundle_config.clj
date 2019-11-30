@@ -5,7 +5,9 @@
   {:small
    {:maven [['awb99.fortune "0.0.2"]]
     :npm {"moment" "^2.24.0"}
-    :ns ['fortune.core "moment"]}
+    :ns ['fortune.core 
+         "moment" 
+         'pinkgorilla.shadow]}
    :gorilla
    {:maven [['awb99.fortune "0.0.2"]
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
@@ -32,13 +34,14 @@
          'pinkgorilla.ui.gorilla-renderable
          ;'pinkgorilla.ui - this brings up namespace not available error.
          ;'quil.sketch
-        ; 'quil.middleware
+         'quil.middleware
          'quil.core
         ; 'quil.util
          "moment"
          "p5"
          "react"
          'reagent.core
+         'pinkgorilla.shadow
          ]}
    :mariacloud
    {:maven [['awb99.fortune "0.0.2"]
@@ -64,5 +67,6 @@
          're-db.patterns
          "moment"
          ;'thi.ng.geom.svg.core
+         'pinkgorilla.shadow
          ]}})
 
