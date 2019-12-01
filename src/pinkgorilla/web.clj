@@ -10,13 +10,36 @@
    [compojure.core :refer :all]
    [compojure.route :as route]
 
-   [pinkgorilla.middleware :as middleware])
+   [pinkgorilla.middleware :as middleware]
+   [pinkgorilla.bundle-info :refer [available-bundles bundle-details]]
+   )
  )
+
+(defn summary []
+  (str  "Available Bundles: " 
+        (pr-str (available-bundles))
+        (t/time-now)
+        )
+  )
+
+(defn bundle-info [bundle]
+  {:status 200
+   :headers {"Content-Type" "text/plain"}
+   :body (str 
+          "Bundle Details " bundle "\n"
+          (with-out-str (clojure.pprint/pprint (bundle-details bundle)))
+          ;(pr-str (bundle-details bundle))
+          )})
+
 
 
 (defroutes handler
   (route/files "/out" {:root "out"})
-  (GET "/" [] (str (t/time-now)))
+  (GET "/" [] (summary))
+  (GET "/info" [bundle] (bundle-info bundle))
+  (GET "/test" [] {:status 200
+                   :headers {"Content-Type" "text/plain"}
+                   :body "Hello \nWorld"})
   (route/not-found "<h1>Page not found</h1>"))
 
 

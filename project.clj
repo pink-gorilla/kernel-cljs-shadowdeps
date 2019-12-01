@@ -34,6 +34,8 @@
    ; shadow-cljs is not needed here (we generate shadow deps via yarn)
    ;[thheller/shadow-cljs "2.0.40"]
    
+   [com.cognitect/transit-clj "0.8.319"] ; load index transit files
+   
    ]
 
   :min-lein-version "2.8.0"
