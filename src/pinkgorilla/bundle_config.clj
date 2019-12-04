@@ -14,6 +14,7 @@
             ['org.pinkgorilla/gorilla-renderable "2.1.2"]
             ['quil "3.1.0"] ;drawing library
             ['reagent "0.8.1"]
+            ['org.pinkgorilla.leaflet "0.0.1"]
             ]
     :npm {"moment" "^2.24.0"
           "p5" "^0.9.0"  ; p5 is a quil cljsjs dependency, v 0.10.x has an error and cannot be used
@@ -42,6 +43,7 @@
          "react"
          'reagent.core
          'pinkgorilla.shadow
+         'pinkgorilla.ui.leaflet
          ]}
    :mariacloud
    {:maven [['awb99.fortune "0.0.2"]
