@@ -5,49 +5,59 @@
   {:small
    {:maven [['awb99.fortune "0.0.2"]]
     :npm {"moment" "^2.24.0"}
-    :ns ['fortune.core 
-         "moment" 
+    :ns ['fortune.core
+         "moment"
          'pinkgorilla.shadow]}
    :gorilla
-   {:maven [['awb99.fortune "0.0.2"]
-            ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
-            ['org.pinkgorilla/gorilla-renderable "2.1.2"]
-            ['quil "3.1.0"] ;drawing library
+   {:maven [;['cljs-ajax "0.8.0"] ; http requests
             ['reagent "0.8.1"]
-            ['org.pinkgorilla.leaflet "0.0.2"]
+            ['org.pinkgorilla/gorilla-renderable "2.1.2"]
+            ['org.pinkgorilla.leaflet "0.0.4"]
             ['org.pinkgorilla.ui.player "0.0.1"]
-            ['cljs-ajax "0.8.0"] ; http requests
+            ['awb99.fortune "0.0.2"]
+            ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
+            ['quil "3.1.0"] ;drawing library
             ]
     :npm {"moment" "^2.24.0"
           "p5" "^0.9.0"  ; p5 is a quil cljsjs dependency, v 0.10.x has an error and cannot be used
           "react" "^16.12.0"
           "react-dom" "^16.0.0"
           "create-react-class" "^15.6.3"
-          "bulma-extensions" "^6.2.7"
-          "bulma-tooltip" "^2.0.2"
-          "path" "^0.12.7"
-          "react-flip-move" "^3.0.3"
-          "react-highlight.js" "^1.0.7"
-          "shake.js" "^1.2.2"
+        ;  "bulma-extensions" "^6.2.7"
+        ;  "bulma-tooltip" "^2.0.2"
+        ;  "path" "^0.12.7"
+        ;  "react-flip-move" "^3.0.3"
+        ;  "react-highlight.js" "^1.0.7"
+        ;  "shake.js" "^1.2.2"
           }
     :ns ['clojure.string
          'clojure.pprint
-         'fortune.core
-         'awb99.shapes.core
+        ; 'ajax.core              ; http requests
+             ; "react"
+         'reagent.core
+         
+         ; pinkgorilla CORE
          'pinkgorilla.ui.gorilla-renderable
          ;'pinkgorilla.ui - this brings up namespace not available error.
-         ;'quil.sketch
-         'quil.middleware
-         'quil.core
-        ; 'quil.util
-         "moment"
-         "p5"
-         "react"
-         'reagent.core
-         'ajax.core              ; http requests
          'pinkgorilla.shadow
+
+         ; pinkgorilla ui plugins         
          'pinkgorilla.ui.leaflet ; geographic maps
          'pinkgorilla.ui.player  ; youtube/.. player
+         
+         ; awb99 ui plugins
+         'fortune.core
+         'awb99.shapes.core
+         
+         ; general ui libraries
+          ;'quil.sketch
+         'quil.middleware
+         'quil.core
+          ; 'quil.util
+          "p5"  ; p5 is a quil dependency p5 processingnet
+         
+         "moment"
+        
          ]}
    :mariacloud
    {:maven [['awb99.fortune "0.0.2"]
@@ -73,6 +83,5 @@
          're-db.patterns
          "moment"
          ;'thi.ng.geom.svg.core
-         'pinkgorilla.shadow
-         ]}})
+         'pinkgorilla.shadow]}})
 
