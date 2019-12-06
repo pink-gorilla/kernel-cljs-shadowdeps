@@ -1,4 +1,4 @@
-(defproject org.pinkgorilla.kernel-cljs-shadowdeps "0.0.1"
+(defproject org.pinkgorilla.kernel-cljs-shadowdeps "0.0.2"
 
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
@@ -32,7 +32,7 @@
    [ring/ring-core "1.7.1"]
    
    ; shadow-cljs is not needed here (we generate shadow deps via yarn)
-   ;[thheller/shadow-cljs "2.0.40"]
+   ;[thheller/shadow-cljs "2.8.80"]
    
    [com.cognitect/transit-clj "0.8.319"] ; load index transit files
    

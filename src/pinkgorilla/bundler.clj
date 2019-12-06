@@ -10,16 +10,16 @@
         my-pretty-printer (create-pretty-printer
                            (assoc default-pretty-print-options
                                   :indent-arrays? true))
-        npm-deps (assoc npm-deps "shadow-cljs" "^2.8.76")
+        npm-deps (assoc npm-deps "shadow-cljs" "^2.8.80")
         config {:dependencies npm-deps}]
     (spit filename (generate-string config {:pretty my-pretty-printer}))))
 
 
 (defn shadow-bundle [bundle-name settings]
   (let [filename "shadow-cljs.edn"
-        ;deps (conj (:maven settings) ['thheller/shadow-cljs "2.8.76"])
+        ;deps (conj (:maven settings) ['thheller/shadow-cljs "2.8.80"])
         deps (vec (concat
-                   [['thheller/shadow-cljs "2.8.76"]]
+                   [['thheller/shadow-cljs "2.8.80"]]
                    (:maven settings)))
         config {:dependencies deps
                 :source-paths ["src"]
