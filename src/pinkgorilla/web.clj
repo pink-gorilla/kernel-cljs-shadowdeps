@@ -15,9 +15,15 @@
    )
  )
 
+
+(defn bundle-link [bundle]
+  (str "<br/> <a href='/info?bundle=" bundle "'> " bundle "</a>"))
+
 (defn summary []
   (str  "Available Bundles: " 
-        (pr-str (available-bundles))
+        (clojure.string/join " \n" (map bundle-link (available-bundles)))
+   ;     (pr-str (available-bundles))
+        "<br/>"
         (t/time-now)
         )
   )

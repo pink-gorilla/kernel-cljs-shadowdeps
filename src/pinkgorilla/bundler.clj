@@ -26,7 +26,8 @@
                 :builds {bundle-name {:target :bootstrap
                                       :output-dir (str "out/" (name bundle-name))
                                       :exclude    #{'cljs.js}
-                                      :entries (:ns settings)}}}]
+                                      :entries (:ns settings)}}}
+        _ (println "shadow config: " config)]
     (spit filename (with-out-str (clojure.pprint/pprint config)))))
 
 
