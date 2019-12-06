@@ -14,6 +14,7 @@
             ['org.pinkgorilla/gorilla-renderable "2.1.2"]
             ['org.pinkgorilla.leaflet "0.0.4"]
             ['org.pinkgorilla.ui.player "0.0.1"]
+            ['org.pinkgorilla.ui.sparklines "0.0.1"]
             ['awb99.fortune "0.0.2"]
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
             ['quil "3.1.0"] ;drawing library
@@ -44,6 +45,7 @@
          ; pinkgorilla ui plugins         
          'pinkgorilla.ui.leaflet ; geographic maps
          'pinkgorilla.ui.player  ; youtube/.. player
+         'pinkgorilla.ui.sparklines  ; sparkline charts
          
          ; awb99 ui plugins
          'fortune.core
@@ -54,10 +56,10 @@
          'quil.middleware
          'quil.core
           ; 'quil.util
-          "p5"  ; p5 is a quil dependency p5 processingnet
+         "p5"  ; p5 is a quil dependency p5 processingnet
          
          "moment"
-        
+         
          ]}
    :mariacloud
    {:maven [['awb99.fortune "0.0.2"]
