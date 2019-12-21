@@ -15,7 +15,7 @@
          'pinkgorilla.shadow
          'pinkgorilla.ui.sparklines]}
    :gorilla
-   {:maven [;['cljs-ajax "0.8.0"] ; http requests
+   {:maven [['cljs-ajax "0.8.0"] ; http requests
             ['reagent "0.8.1"]
             ['org.pinkgorilla/gorilla-renderable "2.1.2"]
             ['org.pinkgorilla.leaflet "0.0.4"]
@@ -39,7 +39,7 @@
           }
     :ns ['clojure.string
          'clojure.pprint
-        ; 'ajax.core              ; http requests
+         'ajax.core              ; http requests
              ; "react"
          'reagent.core
 

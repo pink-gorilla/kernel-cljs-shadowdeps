@@ -25,6 +25,7 @@
                 :source-paths ["src"]
                 :builds {bundle-name {:target :bootstrap
                                       :output-dir (str "out/" (name bundle-name))
+                                      :js-options {:minimize-require false }
                                       :exclude    #{'cljs.js}
                                       :entries (:ns settings)}}}
         _ (println "shadow config: " config)]
