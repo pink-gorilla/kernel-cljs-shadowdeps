@@ -74,8 +74,8 @@
             ['thi.ng/geom "0.0.908"]]
     :npm  {"@braintripping/keypress.js" "github:braintripping/Keypress#4477249"
            "codemirror" "^5.30.0"
-           "react" "^16.0.0"
-           "react-dom" "^16.0.0"
+           "react" "^16.12.0"
+           "react-dom" "^16.12.0"
            "shadow-cljs" "^2.8.80"
            "moment" "^2.24.0"}
     :ns ['fortune.core
