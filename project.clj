@@ -2,7 +2,15 @@
 
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
-
+  :plugins [["lein-shell" "0.5.0"]]
+  :aliases {"bundle-gorilla" ["run" "bundle" "gorilla"]
+  	    "yarn-install" ["shell" "yarn" "install"]
+	    "shadow-release-gorilla" ["shell" "shadow-cljs" "-v" "release" "gorilla"]}
+  ;; :aliases {"build-gorilla" ["shell" "./build-gorilla.sh"]}
+  :prep-tasks ["bundle-gorilla"
+  	       "yarn-install"
+	       "shadow-release-gorilla"]
+  :resource-paths ["out"]
   :dependencies
   [[org.clojure/clojure "1.10.1"]
 
@@ -41,6 +49,5 @@
   :min-lein-version "2.8.0"
   :source-paths ["src"]
   :test-paths ["test"]
-  :resource-paths ["resources"]
   :target-path "target/%s/"
   :main ^:skip-aot pinkgorilla.main)
