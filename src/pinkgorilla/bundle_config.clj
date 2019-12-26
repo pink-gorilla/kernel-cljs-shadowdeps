@@ -17,7 +17,7 @@
    :gorilla
    {:maven [['cljs-ajax "0.8.0"] ; http requests
             ['reagent "0.8.1"]
-            ['org.pinkgorilla/gorilla-renderable "2.1.14"]
+            ['org.pinkgorilla/gorilla-renderable "2.1.15"]
             ['org.pinkgorilla.leaflet "0.0.6"]
             ['org.pinkgorilla.ui.player "0.0.1"]
             ['org.pinkgorilla.ui.sparklines "0.0.2"]
@@ -45,7 +45,7 @@
 
          ; pinkgorilla CORE
          'pinkgorilla.ui.gorilla-renderable
-         'pinkgorilla.ui.text
+         'pinkgorilla.ui.helper
          'pinkgorilla.ui.pinkie
          ;'pinkgorilla.ui - this brings up namespace not available error.
          'pinkgorilla.shadow
