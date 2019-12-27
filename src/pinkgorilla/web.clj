@@ -40,7 +40,7 @@
 
 
 (defroutes handler
-  (route/files "/out" {:root "out"})
+  (route/files "/out/public/cljs-runtime" {:root "out"})
   (GET "/" [] (summary))
   (GET "/info" [bundle] (bundle-info bundle))
   (GET "/test" [] {:status 200
