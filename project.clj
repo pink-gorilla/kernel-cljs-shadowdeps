@@ -1,15 +1,7 @@
-(defproject org.pinkgorilla.kernel-cljs-shadowdeps "0.0.2"
+(defproject org.pinkgorilla/kernel-cljs-shadowdeps "0.0.2"
 
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
-  :plugins [["lein-shell" "0.5.0"]]
-  :aliases {"bundle-gorilla" ["run" "bundle" "gorilla"]
-  	    "yarn-install" ["shell" "yarn" "install"]
-	    "shadow-release-gorilla" ["shell" "shadow-cljs" "-v" "release" "gorilla"]}
-  ;; :aliases {"build-gorilla" ["shell" "./build-gorilla.sh"]}
-  :prep-tasks ["bundle-gorilla"
-  	       "yarn-install"
-	       "shadow-release-gorilla"]
   :resource-paths ["out"]
   :dependencies
   [[org.clojure/clojure "1.10.1"]
@@ -17,12 +9,12 @@
 
    [clj-time "0.11.0"]
    [compojure "1.6.1"]
-   [cheshire "5.8.0"]                         ; JSON encoding
-   [amalloy/ring-gzip-middleware "0.1.4"]     ; gzip compress responses
+   [cheshire "5.8.0"]                                       ; JSON encoding
+   [amalloy/ring-gzip-middleware "0.1.4"]                   ; gzip compress responses
    [ring/ring-defaults "0.3.2"]
    [ring/ring-codec "1.1.1"]
-   [ring-cors "0.1.12"]                       ; CORS requests
-   
+   [ring-cors "0.1.12"]                                     ; CORS requests
+
    [ch.qos.logback/logback-classic "1.2.3"]
    [cheshire "5.8.1"]
    [clojure.java-time "0.3.2"]
@@ -38,16 +30,28 @@
 
    [org.clojure/tools.cli "0.4.2"]
    [ring/ring-core "1.7.1"]
-   
+
    ; shadow-cljs is not needed here (we generate shadow deps via yarn)
    ;[thheller/shadow-cljs "2.8.80"]
-   
-   [com.cognitect/transit-clj "0.8.319"] ; load index transit files
-   
+
+   [com.cognitect/transit-clj "0.8.319"]                    ; load index transit files
+
    ]
 
   :min-lein-version "2.8.0"
   :source-paths ["src"]
   :test-paths ["test"]
   :target-path "target/%s/"
-  :main ^:skip-aot pinkgorilla.main)
+  :main ^:skip-aot pinkgorilla.main
+  :profiles {
+             :cljs {
+                    :plugins    [["lein-shell" "0.5.0"]]
+                    :aliases    {"bundle-gorilla"         ["run" "bundle" "gorilla"]
+                                 "yarn-install"           ["shell" "yarn" "install"]
+                                 "shadow-release-gorilla" ["shell" "shadow-cljs" "-v" "release" "gorilla"]}
+                    ;; :aliases {"build-gorilla" ["shell" "./build-gorilla.sh"]}
+                    :prep-tasks ["bundle-gorilla"
+                                 "yarn-install"
+                                 "shadow-release-gorilla"]
+                    }
+             })
