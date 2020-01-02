@@ -9,14 +9,14 @@
 
 (defn available-bundles
   []
-  (->> (io/file "./out")
+  (->> (io/file "./out/public/cljs-runtime")
        (.listFiles)
        (map #(.getName %) )
        (doall)))
 
 
 (defn bundle-details [bundle-name]
-  (let [index-file-name (str "./out/" bundle-name "/index.transit.json")
+  (let [index-file-name (str "./out/public/cljs-runtime/" bundle-name "/index.transit.json")
         ;s (slurp index-file-name)
         in (io/input-stream index-file-name)
         reader (transit/reader in :json)
