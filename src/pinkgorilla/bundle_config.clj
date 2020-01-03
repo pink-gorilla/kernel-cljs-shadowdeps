@@ -31,8 +31,6 @@
           "react" "^16.12.0"
           "react-dom" "^16.12.0"
           "create-react-class" "^15.6.3"
-        ;  "bulma-extensions" "^6.2.7"
-        ;  "bulma-tooltip" "^2.0.2"
         ;  "path" "^0.12.7"
         ;  "react-flip-move" "^3.0.3"
         ;  "react-highlight.js" "^1.0.7"
@@ -46,8 +44,8 @@
 
          ; pinkgorilla CORE
          ;'pinkgorilla.ui.gorilla-renderable
-         ;'pinkgorilla.ui.helper
-         ;'pinkgorilla.ui.pinkie
+         'pinkgorilla.ui.helper
+         'pinkgorilla.ui.pinkie
          'pinkgorilla.shadow
 
          ; pinkgorilla ui plugins         
