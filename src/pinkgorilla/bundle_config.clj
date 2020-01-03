@@ -18,10 +18,13 @@
    :gorilla
    {:maven [['cljs-ajax "0.8.0"] ; http requests
             ['reagent "0.8.1"]
-            ['org.pinkgorilla/gorilla-renderable "2.1.15"]
-            ['org.pinkgorilla.leaflet "0.0.7"]
-            ['org.pinkgorilla.ui.player "0.0.2"]
+            ['org.pinkgorilla/gorilla-renderable "2.1.19"]
+            
+            ['org.pinkgorilla.ui.player "0.0.3"]
             ['org.pinkgorilla.ui.sparklines "0.0.2"]
+            ['org.pinkgorilla.ui.aggrid "0.0.4"]
+            ['org.pinkgorilla.leaflet "0.0.7"]
+            
             ['awb99.fortune "0.0.2"]
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
             ['quil "3.1.0"] ;drawing library
@@ -49,23 +52,27 @@
          'pinkgorilla.shadow
 
          ; pinkgorilla ui plugins         
-         'pinkgorilla.ui.leaflet ; geographic maps
          'pinkgorilla.ui.player  ; youtube/.. player
-         'pinkgorilla.ui.sparklines  ; sparkline charts
+         'pinkgorilla.ui.sparklines  ; sparkline charts  
+         'pinkgorilla.ui.aggrid  ; grids  
+         'pinkgorilla.ui.leaflet ; geographic maps
+         
 
          ; awb99 ui plugins
          'fortune.core
          'awb99.shapes.core
 
+         'thi.ng.strf.core
+         
          ; general ui libraries
           ;'quil.sketch
          'quil.middleware
          'quil.core
           ; 'quil.util
          "p5"  ; p5 is a quil dependency p5 processingnet
-
+         
          "moment"]
-    :exclude    #{'cljs.js 'pinkgorilla.ui.pinkie}}
+    :exclude    #{'cljs.js }}
    :mariacloud
    {:maven [['awb99.fortune "0.0.2"]
             ['re-view "0.4.6"]
