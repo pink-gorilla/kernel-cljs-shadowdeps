@@ -3,6 +3,10 @@
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :resource-paths ["out"]
+  :deploy-repositories [["releases" {:url "https://clojars.org/repo"
+                                     :username :env/release_username
+                                     :password :env/release_password
+                                     :sign-releases false}]]
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [clj-time "0.11.0"]
                  [compojure "1.6.1"]
