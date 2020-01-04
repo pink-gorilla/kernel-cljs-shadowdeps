@@ -14,7 +14,7 @@
    [ring/ring-defaults "0.3.2"]
    [ring/ring-codec "1.1.1"]
    [ring-cors "0.1.12"]                                     ; CORS requests
-
+   
    [ch.qos.logback/logback-classic "1.2.3"]
    [cheshire "5.8.1"]
    [clojure.java-time "0.3.2"]
@@ -33,9 +33,9 @@
 
    ; shadow-cljs is not needed here (we generate shadow deps via yarn)
    ;[thheller/shadow-cljs "2.8.80"]
-
+   
    [com.cognitect/transit-clj "0.8.319"]                    ; load index transit files
-
+   
    ]
 
   :min-lein-version "2.8.0"
@@ -54,4 +54,7 @@
                                  "yarn-install"
                                  "shadow-release-gorilla"]
                     }
-             })
+             }
+    :repositories [["clojars" {:url "https://clojars.org/repo"
+                               :username "pinkgorillawb"
+                               :sign-releases false}]])
