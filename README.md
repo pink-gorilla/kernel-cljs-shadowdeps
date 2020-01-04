@@ -1,4 +1,4 @@
-# Dependency Server for CLJS Kernel (that uses Shadow-CLJS)
+# Pink Gorilla ClojureScript kernel dependencies [![GitHub Actions status |pink-gorilla/kernel-cljs-shadowdeps](https://github.com/pink-gorilla/kernel-cljs-shadowdeps/workflows/CI/badge.svg)](https://github.com/pink-gorilla/kernel-cljs-shadowdeps/actions?workflow=CI)[![Clojars Project](https://img.shields.io/clojars/v/org.pinkgorilla/kernel-cljs-shadowdeps.svg)](https://clojars.org/org.pinkgorilla/kernel-cljs-shadowdeps)
 
 
 ## How to run it:

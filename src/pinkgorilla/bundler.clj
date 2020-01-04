@@ -14,7 +14,6 @@
         config {:dependencies npm-deps}]
     (spit filename (generate-string config {:pretty my-pretty-printer}))))
 
-
 (defn shadow-bundle [bundle-name settings]
   (let [filename "shadow-cljs.edn"
         ;deps (conj (:maven settings) ['thheller/shadow-cljs "2.8.80"])
@@ -25,7 +24,7 @@
                 :source-paths ["src"]
                 :builds {bundle-name {:target :bootstrap
                                       :output-dir (str "out/public/cljs-runtime/" (name bundle-name))
-                                      :js-options {:minimize-require false }
+                                      :js-options {:minimize-require false}
                                       :exclude   (:exclude settings)
                                       :entries (:ns settings)}}}
         _ (println "shadow config: " config)]
@@ -36,13 +35,10 @@
 ;  {:builds (reduce shadow-bundle {} config)})
 
 
-
 (defn generate-config-bundle [[name settings]]
   (println "generating config for " name)
   (package-json (:npm settings))
   (shadow-bundle name settings))
-
-
 
 (defn generate-config [name]
   (let [k (keyword name)]
@@ -50,9 +46,6 @@
 
  ; (generate-config-bundle [:mariacloud (:mariacloud bundle-config)])
   ;(map generate-config-bundle bundle-config)
-
-
-
 
 
 (comment

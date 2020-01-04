@@ -1,8 +1,8 @@
 (ns pinkgorilla.middleware
   (:require
-   [ring.middleware.defaults :refer [site-defaults wrap-defaults]]  
+   [ring.middleware.defaults :refer [site-defaults wrap-defaults]]
    [cheshire.generate :as cheshire]
-   [cognitect.transit :as transit]   
+   [cognitect.transit :as transit]
    ;[ring.middleware.anti-forgery :refer [wrap-anti-forgery]]
    ;[muuntaja.middleware :refer [wrap-format wrap-params]]
    ;[ring-ttl-session.core :refer [ttl-memory-store]]
@@ -10,18 +10,13 @@
    ;[ring.middleware.cookies :refer [wrap-cookies]]
 
 ;[ring.middleware.reload :refer [wrap-reload]]
-[ring.middleware.cors :refer [wrap-cors]]
+   [ring.middleware.cors :refer [wrap-cors]]
 
-[ring.middleware.params :refer [wrap-params]]
-[ring.middleware.multipart-params :refer [wrap-multipart-params]]
-[ring.middleware.gzip :refer [wrap-gzip]]
-      
-   
-   )
-  (:import ))
+   [ring.middleware.params :refer [wrap-params]]
+   [ring.middleware.multipart-params :refer [wrap-multipart-params]]
+   [ring.middleware.gzip :refer [wrap-gzip]])
 
-
-
+  (:import))
 
 (defn wrap-base [handler]
   (-> handler
@@ -34,7 +29,6 @@
 
       ;wrap-internal-error
       ))
-
 
 (defn allow-cross-origin
   "Middleware function to allow cross origin requests from browsers.
@@ -55,7 +49,6 @@
            (assoc :status 200))
        (-> (handler request)         ; Pass the request on, but make sure we add this header for CORS support in Chrome.
            (assoc-in [:headers "Access-Control-Allow-Origin"] allowed-origins))))))
-
 
 (defn wrap-middleware [handler]
   (-> handler
