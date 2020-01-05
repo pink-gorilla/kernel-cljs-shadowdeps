@@ -46,4 +46,4 @@ jobs:
       run: |
         git config --global user.email "ci@pinkgorilla.org"
         git config --global user.name "CI/CD"
-        lein with-profile +cljs release
+        lein with-profile +cljs do jar, release
