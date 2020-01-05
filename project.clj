@@ -1,4 +1,4 @@
-(defproject org.pinkgorilla/kernel-cljs-shadowdeps "0.0.5-SNAPSHOT"
+(defproject org.pinkgorilla/kernel-cljs-shadowdeps "0.0.5"
 
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
