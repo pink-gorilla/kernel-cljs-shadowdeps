@@ -43,7 +43,11 @@ jobs:
       env:
         RELEASE_USERNAME: ${{ secrets.ReleaseUsername }}
         RELEASE_PASSWORD: ${{ secrets.ReleasePassword }}
+      # TODO: Git status/checkout -f - hacky as f***!
       run: |
         git config --global user.email "ci@pinkgorilla.org"
         git config --global user.name "CI/CD"
-        lein with-profile +cljs do jar, release
+        lein with-profile +cljs jar
+        git status
+        git checkout -f package.json
+        lein release
