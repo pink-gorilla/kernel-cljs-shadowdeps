@@ -4,7 +4,7 @@
   {:small
    {:maven [['awb99.fortune "0.0.2"]
             ['reagent "0.8.1"]
-            ['org.pinkgorilla.ui.sparklines "0.0.2"]]
+            ['org.pinkgorilla/gorilla-ui-sparklines "0.0.5"]]
     :npm {"moment" "^2.24.0"
           "react" "^16.12.0"
           "react-dom" "^16.12.0"
@@ -17,13 +17,8 @@
    :gorilla
    {:maven [['cljs-ajax "0.8.0"] ; http requests
             ['reagent "0.8.1"]
-            ['org.pinkgorilla/gorilla-renderable "2.1.19"]
-
-            ['org.pinkgorilla.ui.player "0.0.3"]
-            ['org.pinkgorilla.ui.sparklines "0.0.2"]
-            ['org.pinkgorilla.ui.aggrid "0.0.4"]
-            ['org.pinkgorilla.leaflet "0.0.7"]
-
+            ['org.pinkgorilla/gorilla-renderable "2.1.22"]
+            ['org.pinkgorilla/gorilla-ui "0.1.1"]
             ['awb99.fortune "0.0.2"]
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
             ['quil "3.1.0"] ;drawing library
