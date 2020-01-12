@@ -20,7 +20,7 @@
 ## What happens
 
 - Bundles are created in /out/small  /out/gorilla /out/mariacloud 
-- Each BUndle has:
+- Each Bundle has:
 - index.transit.json - this file is used by shadow-cljs loader.
 - ana/*.transit.json  - analysis files that are used by the self hosted clojurescript anlyzer
 - js/*.js - compiled namespaces from npm and maven that will be read by the shdow-clj loader 
