@@ -16,8 +16,8 @@
     :exclude    #{'cljs.js}}
    :gorilla
    {:maven [['cljs-ajax "0.8.0"] ; http requests
-            ['reagent "0.8.1"]
-            ['org.pinkgorilla/gorilla-renderable "2.1.22"]
+            ;; ['reagent "0.8.1"]
+            ;; ['org.pinkgorilla/gorilla-renderable "2.1.22"]
             ['org.pinkgorilla/gorilla-ui "0.1.1"]
             ['awb99.fortune "0.0.2"]
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
