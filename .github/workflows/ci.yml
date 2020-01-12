@@ -50,4 +50,5 @@ jobs:
         lein with-profile +cljs jar
         git status
         git checkout -f package.json
+        git checkout -f package-lock.json
         lein release
