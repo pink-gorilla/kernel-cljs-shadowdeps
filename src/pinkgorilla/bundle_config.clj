@@ -4,7 +4,8 @@
   {:small
    {:maven [['awb99.fortune "0.0.2"]
             ['reagent "0.8.1"]
-            ['org.pinkgorilla/gorilla-ui-sparklines "0.0.5"]]
+            ;['org.pinkgorilla/gorilla-ui-sparklines "0.0.5"]
+            ]
     :npm {"moment" "^2.24.0"
           "react" "^16.12.0"
           "react-dom" "^16.12.0"
@@ -12,13 +13,15 @@
     :ns ['fortune.core
          "moment"
          'pinkgorilla.shadow
-         'pinkgorilla.ui.sparklines]
+         ;'pinkgorilla.ui.sparklines
+         ]
     :exclude    #{'cljs.js}}
    :gorilla
    {:maven [['cljs-ajax "0.8.0"] ; http requests
             ;; ['reagent "0.8.1"]
-            ;; ['org.pinkgorilla/gorilla-renderable "2.1.22"]
-            ['org.pinkgorilla/gorilla-ui "0.1.1"]
+            ['org.pinkgorilla/gorilla-renderable "3.0.2"]
+            ['org.pinkgorilla/gorilla-renderable-ui "0.1.5"]
+            ['org.pinkgorilla/gorilla-ui "0.1.7-SNAPSHOT"]
             ['awb99.fortune "0.0.2"]
             ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
             ['quil "3.1.0"] ;drawing library
@@ -41,11 +44,12 @@
 
          ; pinkgorilla CORE
          ;'pinkgorilla.ui.gorilla-renderable
-         'pinkgorilla.ui.helper
+         ;'pinkgorilla.ui.helper
          'pinkgorilla.ui.pinkie
-         'pinkgorilla.shadow
+         ;'pinkgorilla.shadow
 
-         ; pinkgorilla ui plugins         
+         ; pinkgorilla ui plugins
+         'pinkgorilla.ui.default-renderer         
          'pinkgorilla.ui.player  ; youtube/.. player
          'pinkgorilla.ui.sparklines  ; sparkline charts  
          'pinkgorilla.ui.aggrid  ; grids  
@@ -63,7 +67,7 @@
          'quil.middleware
          'quil.core
           ; 'quil.util
-         "p5"  ; p5 is a quil dependency p5 processingnet
+         "p5"  ; p5 is a quil dependency ()p5 processingnet)
 
          "moment"]
     :exclude    #{'cljs.js}}
