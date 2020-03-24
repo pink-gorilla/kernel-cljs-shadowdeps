@@ -24,3 +24,5 @@ out/
 shadow-cljs.edn
 yarn-error.log
 pom.xml
+package.json
+yarn.lock
