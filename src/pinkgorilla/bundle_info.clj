@@ -24,4 +24,7 @@
 
   (bundle-details "gorilla")
 
-  (with-out-str (clojure.pprint/pprint (bundle-details "gorilla"))))
+  (with-out-str (clojure.pprint/pprint (bundle-details "gorilla")))
+
+  ;comment end
+  )

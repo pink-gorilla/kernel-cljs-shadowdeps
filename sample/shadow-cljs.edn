@@ -1,8 +1,0 @@
-{:dependencies
- [[awb99.fortune "0.0.1"]]
- :source-paths ["src"]
- :nrepl        {:port 8703}
- :builds       {:small {:target     :bootstrap
-                        :output-dir "out/small"
-                        :entries    [fortune.core "moment"]
-                        :exclude    #{cljs.js}}}}
