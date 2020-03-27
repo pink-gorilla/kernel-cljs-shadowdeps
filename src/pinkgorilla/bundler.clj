@@ -5,7 +5,10 @@
    [clojure.java.io :as io]
    [config.core :refer [get-config]]))
 
-(def bundle-root-dir "out/bundles")
+
+(def bundle-root-dir "out/bundles") ;; relative to project dir
+(def bundle-web-dir "../../public/cljs-runtime/") ;; relative to bundle-project-dir, example: out/bundles/gorilla
+
 
 (defn- delete-recursively [fname]
   (let [func (fn [func f]
@@ -43,7 +46,7 @@
         config {:dependencies deps
                 :source-paths ["src"]
                 :builds {bundle-kw {:target :bootstrap
-                                    :output-dir (str "../public/cljs-runtime/" bundle-name)
+                                    :output-dir (str bundle-web-dir bundle-name)
                                     :js-options {:minimize-require false}
                                     :exclude   (:exclude settings)
                                     :entries (:ns settings)}}}
