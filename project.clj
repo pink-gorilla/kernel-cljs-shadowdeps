@@ -8,6 +8,7 @@
                                      :password :env/release_password
                                      :sign-releases false}]]
   :dependencies [[org.clojure/clojure "1.10.1"]
+                 ;[org.clojure/core.async "1.0.567"]  ; core.async does not work with self hosted clojurescript.
                  [clj-time "0.11.0"]
                  [compojure "1.6.1"]
                  [cheshire "5.8.0"]                                       ; JSON encoding
@@ -15,7 +16,7 @@
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-codec "1.1.1"]
                  [ring-cors "0.1.12"]                                     ; CORS requests
-                 
+
                  [ch.qos.logback/logback-classic "1.2.3"]
                  [cheshire "5.8.1"]
                  [clojure.java-time "0.3.2"]
@@ -34,11 +35,11 @@
 
    ; shadow-cljs is not needed here (we generate shadow deps via yarn)
    ;[thheller/shadow-cljs "2.8.80"]
-                 
+
                  [com.cognitect/transit-clj "0.8.319"]                    ; load index transit files
                  ]
   :main ^:skip-aot pinkgorilla.main
-  
+
   :profiles {:dev {:dependencies [;; [thheller/shadow-cljs "2.8.80"]
                                   ;; [thheller/shadow-cljsjs "0.0.21"]
                                   [clj-kondo "2019.11.23"]]
@@ -62,7 +63,7 @@
                     :prep-tasks ["bundle-gorilla"
                                  "shadow-release-gorilla"]}}
   ;; :prep-tasks ["build-shadow-ci"]
-  
+
   :aliases {;; "build-shadow-ci" ["run" "-m" "shadow.cljs.devtools.cli" "compile" ":ci"]
             "bump-version" ["change" "version" "leiningen.release/bump-version"]}
 
