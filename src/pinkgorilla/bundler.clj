@@ -1,13 +1,12 @@
 (ns pinkgorilla.bundler
   (:require
    [clojure.pprint]
-   [cheshire.core :refer :all]
-   [clojure.java.io :as io]
-   [config.core :refer [get-config]]))
+   [cheshire.core :as cheshire]
+   [clojure.java.io :as io]))
 
 
 (def bundle-root-dir "out/bundles") ;; relative to project dir
-(def bundle-web-dir "../../public/cljs-runtime/") ;; relative to bundle-project-dir, example: out/bundles/gorilla
+(def bundle-web-dir "../../public/bundles/") ;; relative to bundle-project-dir, example: out/bundles/gorilla
 
 
 (defn- delete-recursively [fname]
@@ -29,12 +28,12 @@
 
 (defn- package-json [bundle-name npm-deps]
   (let [filename (str bundle-root-dir "/" bundle-name "/package.json")
-        my-pretty-printer (create-pretty-printer
-                           (assoc default-pretty-print-options
+        my-pretty-printer (cheshire/create-pretty-printer
+                           (assoc cheshire/default-pretty-print-options
                                   :indent-arrays? true))
         npm-deps (assoc npm-deps "shadow-cljs" "^2.8.80")
         config {:dependencies npm-deps}]
-    (spit filename (generate-string config {:pretty my-pretty-printer}))))
+    (spit filename (cheshire/generate-string config {:pretty my-pretty-printer}))))
 
 (defn- shadow-bundle [bundle-name settings]
   (let [bundle-kw (keyword bundle-name)
@@ -62,15 +61,5 @@
   (package-json name (:npm settings))
   (shadow-bundle name settings))
 
-(defn generate-config [name]
-  (let [settings (get-config name)]
-    (generate-config-bundle name settings)))
 
-(comment
 
-  (generate-config "small")
-
-  (generate-config "mariacloud")
-
-  ; comment end
-  )
