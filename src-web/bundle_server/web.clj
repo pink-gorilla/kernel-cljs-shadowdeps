@@ -34,8 +34,12 @@
           ;(pr-str (bundle-details bundle))
           )})
 
+  (route/files "/foo" {:root "test/test_files"})
+
 (defroutes handler
-  (route/files "/out/public/bundles" {:root "out/public/bundles"})
+  (route/files "/bundles" ; mount point 
+               {:root "out/public/bundles"} ; local dir
+               )
   (GET "/" [] (summary))
   (GET "/info" [bundle] (bundle-info bundle))
   (GET "/test" [] {:status 200
