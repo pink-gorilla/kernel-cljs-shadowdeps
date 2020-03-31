@@ -1,5 +1,7 @@
-(ns pinkgorilla.web
+(ns bundle-server.web
   (:require
+   [clojure.string]
+   [clojure.pprint]
    [clj-time.core :as t]
    [luminus.http-server :as http]
    [reitit.ring :as ring]
@@ -10,8 +12,8 @@
    [compojure.core :refer :all]
    [compojure.route :as route]
 
-   [pinkgorilla.middleware :as middleware]
-   [pinkgorilla.bundle-info :refer [available-bundles bundle-details]]))
+   [bundle-server.middleware :refer [wrap-middleware]]
+   [bundle-server.bundle-info :refer [available-bundles bundle-details]]))
 
 (defn bundle-link [bundle]
   (str "<br/> <a href='/info?bundle=" bundle "'> " bundle "</a>"))
@@ -33,7 +35,7 @@
           )})
 
 (defroutes handler
-  (route/files "/out/public/cljs-runtime" {:root "out/public/cljs-runtime"})
+  (route/files "/out/public/bundles" {:root "out/public/bundles"})
   (GET "/" [] (summary))
   (GET "/info" [bundle] (bundle-info bundle))
   (GET "/test" [] {:status 200
@@ -42,13 +44,15 @@
   (route/not-found "<h1>Page not found</h1>"))
 
 (def app
-  (middleware/wrap-middleware handler))
+  (wrap-middleware handler))
 
 (defn run-web []
-  (println "starting shadowdeps server at port 2705..")
+  (println "bundle-server starting at http://localhost:2705/ ..")
   (http/start
    {:handler app
-    :port 2705}))
+    :port 2705})
+   (println "bundle-server starting at http://localhost:2705/ ..")
+  )
 
 (comment
 

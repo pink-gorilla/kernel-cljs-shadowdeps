@@ -1,22 +1,29 @@
-(ns pinkgorilla.bundle-info
+(ns bundle-server.bundle-info
   (:require
    [clojure.java.io :as io]
    [cognitect.transit :as transit]
-   [clojure.string :as str]))
+   [clojure.string]))
+
+
+(def bundle-web-dir "./out/public/bundles")
+
 
 (defn available-bundles
   []
-  (->> (io/file "./out/public/cljs-runtime")
+  (->> (io/file bundle-web-dir)
        (.listFiles)
        (map #(.getName %))
        (doall)))
 
 (defn bundle-details [bundle-name]
-  (let [index-file-name (str "./out/public/cljs-runtime/" bundle-name "/index.transit.json")
+  (let [index-file-name (str bundle-web-dir "/" bundle-name "/index.transit.json")
         ;s (slurp index-file-name)
         in (io/input-stream index-file-name)
         reader (transit/reader in :json)]
     (transit/read reader)))
+
+(defn bundle-link [bundle-name]
+  (str "bundles/" bundle-name "/index.transit.json"))
 
 (comment
 

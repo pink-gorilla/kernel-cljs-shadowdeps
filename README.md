@@ -1,11 +1,17 @@
 # Pink Gorilla ClojureScript kernel dependencies [![GitHub Actions status |pink-gorilla/kernel-cljs-shadowdeps](https://github.com/pink-gorilla/kernel-cljs-shadowdeps/workflows/CI/badge.svg)](https://github.com/pink-gorilla/kernel-cljs-shadowdeps/actions?workflow=CI)[![Clojars Project](https://img.shields.io/clojars/v/org.pinkgorilla/kernel-cljs-shadowdeps.svg)](https://clojars.org/org.pinkgorilla/kernel-cljs-shadowdeps)
 
 
+# Library Usecase
+  Use pinkgorilla.bundler to create a dyanamic configuration files, with which 
+  shadow-cljs can build bundles.
+  ```
+   (pinkgorilla.bundler/generate-config-bundle bundle-name bundle-settings)
+  ```
+
 ## How to run it:
 
 ```
-  ; run once to install shadow-cljs
-  install.sh 
+  ; It is expected that you have shadow-cljs installed.
 
   ; build bundles:
   ./build-small.sh
@@ -13,7 +19,8 @@
   ./builld-mariacloud.sh
 
   ; run the webserver that provides the bundles
-  ./run-web.sh
+  lein run-bundle-server
+  this starts a server on port 2705.
 
 ```
 

@@ -5,8 +5,8 @@
             ;; ['reagent "0.8.1"]
            ['thi.ng/strf "0.2.2"]
            ['org.pinkgorilla/gorilla-renderable "3.0.5"]
-           ['org.pinkgorilla/gorilla-renderable-ui "0.1.18"]
-           ['org.pinkgorilla/gorilla-ui "0.1.19"]
+           ['org.pinkgorilla/gorilla-renderable-ui "0.1.25"]
+           ['org.pinkgorilla/gorilla-ui "0.1.22"]
            ['awb99.fortune "0.0.2"]
            ['awb99/shapes "0.1.2"] ; shape library borrowed from maria-cloud
            ['quil "3.1.0"] ;drawing library
@@ -22,11 +22,11 @@
         'thi.ng.strf.core
           ; "react"
         'reagent.core
-        
+        ;'pinkgorilla.notebook.repl
          ; pinkgorilla CORE
          ;'pinkgorilla.ui.gorilla-renderable
          ;'pinkgorilla.ui.helper
-        ;'pinkgorilla.ui.pinkie
+        'pinkgorilla.ui.pinkie
          ;'pinkgorilla.shadow
 
          ; pinkgorilla.ui plugins
