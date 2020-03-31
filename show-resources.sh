@@ -1,1 +1,1 @@
-jar tf target/gorilla-renderable-ui-0.1.10.jar
+jar tf target/kernel-cljs-shadowdeps-0.0.11-SNAPSHOT.jar

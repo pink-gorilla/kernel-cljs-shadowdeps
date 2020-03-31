@@ -18,7 +18,7 @@
   ; default usecase is library useage, so no main entry
  ; :main ^:skip-aot pinkgorilla.main
   :source-paths ["src"]
-  :resource-paths ["out"]  ; bundle output: configuration + js-bundle with meta data
+  :resource-paths ["out/public"]  ; js-bundles with meta data
   :profiles
   {:bundler {; used to generate pre-configured bundle configurations
              :main ^:skip-aot main
