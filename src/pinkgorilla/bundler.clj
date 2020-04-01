@@ -4,7 +4,6 @@
    [cheshire.core :as cheshire]
    [clojure.java.io :as io]))
 
-
 (def bundle-root-dir "out/bundles") ;; relative to project dir
 (def bundle-web-dir "../../public/bundles/") ;; relative to bundle-project-dir, example: out/bundles/gorilla
 
@@ -24,7 +23,6 @@
     (when (.exists (io/file bundle-dir))
       (delete-recursively bundle-dir))
     (.mkdir (java.io.File. bundle-dir))))
-
 
 (defn- package-json [bundle-name npm-deps]
   (let [filename (str bundle-root-dir "/" bundle-name "/package.json")
@@ -52,8 +50,6 @@
         ;_ (println "shadow config: " config)
         ]
     (spit filename (with-out-str (clojure.pprint/pprint config)))))
-
-
 
 (defn generate-config-bundle [name settings]
   (println "generating config for " name)
