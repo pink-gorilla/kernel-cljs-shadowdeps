@@ -37,8 +37,10 @@ jobs:
           ${{ runner.os }}-node-
     - name: Install dependencies
       run: |
-        npm install
         lein deps
+        lein create-bundle-config gorilla
+        cd out/bundles/gorilla && npm install
+        cd out/bundles/gorilla && ./node_modules/.bin/shadow-cljs -v release gorilla
     - name: Check formatting
       run: lein cljfmt check
     - name: Run tests

@@ -1,4 +1,4 @@
 lein create-bundle-config gorilla
 cd out/bundles/gorilla
-yarn install
-shadow-cljs -v release gorilla
+npm install
+./node_modules/.bin/shadow-cljs -v release gorilla
