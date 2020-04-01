@@ -1,4 +1,4 @@
-(defproject org.pinkgorilla/kernel-cljs-shadowdeps "0.0.11-SNAPSHOT"
+(defproject org.pinkgorilla/kernel-cljs-shadowdeps "0.0.11"
   :description "cljs bundle generator that works with shadow-cljs,
                 so that self hosted clojurescript can load additional dependencies"
   :url "https://github.com/pink-gorilla/kernel-cljs-shadowdeps"
