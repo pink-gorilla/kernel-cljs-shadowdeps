@@ -49,8 +49,8 @@ jobs:
         git config --global user.name "CI/CD"
         lein with-profile +cljs jar
         git status
-        git checkout -f package.json
-        git checkout -f package-lock.json
+        # git checkout -f package.json
+        # git checkout -f package-lock.json
         #
         # Could not transfer metadata foo:bar/maven-metadata.xml from/to releases (https://clojars.org/repo): Read timed out
         # Default 10000 not enough for us
