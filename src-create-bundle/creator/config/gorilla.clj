@@ -1,4 +1,4 @@
-(ns config.gorilla)
+(ns creator.config.gorilla)
 
 (def gorilla
   {:maven [['cljs-ajax "0.8.0"] ; http requests

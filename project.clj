@@ -20,14 +20,14 @@
   :source-paths ["src"]
   :resource-paths ["out/public"]  ; js-bundles with meta data
   :profiles
-  {:bundler {; used to generate pre-configured bundle configurations
-             :main         ^:skip-aot main
+  {:creator {; used to generate pre-configured bundle configurations
+             :main         ^:skip-aot creator.main
              :source-paths ["src-create-bundle"]
              :dependencies []}
 
    :web     {; web-server to serve gpre-generated bundles
              :main         ^:skip-aot bundle-server.main
-             :source-paths ["src-web"]
+             :source-paths ["src-web" "src-create-bundle"]
              :dependencies [;[org.clojure/core.async "1.0.567"]  ; core.async does not work with self hosted clojurescript.
                             [clj-time "0.11.0"]
                             [compojure "1.6.1"]
@@ -91,7 +91,7 @@
             "run-bundle-server" ^{:doc "Run Bundle-Server"}
             ["with-profile" "+web" "run" "-m" "bundle-server.main"]
             "create-bundle-config" ^{:doc "Creates Bundle Config. Expects bundle name parameter "}
-            ["with-profile" "+bundler" "run" "-m" "main"]
+            ["with-profile" "+creator" "run" "-m" "creator.main"]
             }
 
   :release-tasks [["vcs" "assert-committed"]

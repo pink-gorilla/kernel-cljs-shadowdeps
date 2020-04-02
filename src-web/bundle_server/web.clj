@@ -11,16 +11,22 @@
 
    [compojure.core :refer :all]
    [compojure.route :as route]
-
+ [creator.main]
    [bundle-server.middleware :refer [wrap-middleware]]
    [bundle-server.bundle-info :refer [available-bundles bundle-details]]))
 
 (defn bundle-link [bundle]
   (str "<br/> <a href='/info?bundle=" bundle "'> " bundle "</a>"))
 
+(defn index-link [bundle]
+  (str " <a href='/bundles/" bundle "/index.transit.json'> index-raw </a> <br/>"))
+
+(defn bundle-row[bundle]
+  (str (bundle-link bundle) (index-link bundle)))
+
 (defn summary []
   (str  "Available Bundles: "
-        (clojure.string/join " \n" (map bundle-link (available-bundles)))
+        (clojure.string/join " \n" (map bundle-row (available-bundles)))
    ;     (pr-str (available-bundles))
         "<br/>"
         (t/time-now)))
@@ -38,7 +44,7 @@
 
 (defroutes handler
   (route/files "/bundles" ; mount point 
-               {:root "out/public/bundles"} ; local dir
+               {:root creator.main/bundle-web-dir } ; local dir
                )
   (GET "/" [] (summary))
   (GET "/info" [bundle] (bundle-info bundle))

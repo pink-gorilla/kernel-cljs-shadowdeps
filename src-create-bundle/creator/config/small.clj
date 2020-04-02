@@ -1,4 +1,4 @@
-(ns config.small)
+(ns creator.config.small)
 
 (def small
 

@@ -1,4 +1,4 @@
-(ns config.mariacloud)
+(ns creator.config.mariacloud)
 
 (def mariacloud
  {:maven [['awb99.fortune "0.0.2"]
